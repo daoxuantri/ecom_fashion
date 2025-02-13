@@ -303,7 +303,7 @@ class ProductDetailPage extends StatelessWidget {
                       const CircleAvatar(
                         radius: 20,
                         backgroundImage: NetworkImage(
-                          'https://blogger.googleusercontent.com/img/a/AVvXsEiRB_dB-wXqJdvt26dkR-vqOXUjacfxAQIgFNMHl_czjMNDOh6VZVc-muCczDKZh-VU0JqUYV1M9h25ZooLGqhVfwexQO6zNY1jxeMDu0-SpfEPe8xkF7re1eldAkKld9Ct1YzesFmHpQK9wlPK330AXA85gsmDBURTQm3i7r08g6vO7KNtAPyDgeUIaQ=s740',
+                          'https://s3-alpha-sig.figma.com/img/ebd1/f255/26652d4ef5745a41a8c6cceaaa96ffac?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Bf~JLUEhWD9t49jEy~yMQGABy0~6M2X2TbgXH4P08A0ivq~6EXeLw5kFaZhboQxNgFkXEtvUR6q2wqZMtOL7BpdjjellAhRZ~GzbhN9YSsqDlAwGiBCtUkFMxAxBkilyWV60Uj2FdUweKqqYq1r7ekoiJYEoaDvKmsv0Mo7Se~r6Zliw1ii~WwITOPZly-O8R-OMqSMN3IX-5PHHCP5dKxTHWQuPdrDvNPiFoAB4gsxthH67-YtPfeU1XMFbyLz89Dzz7e-EYJKJBWgYTBq~BEO1bY5KhbMzto4C~3QOf~P9KIX2qvCZI51p7pFIw8-LDGiBQ7MIpoE0AYrFMBaqoQ__',
                         ),
                         backgroundColor: kBlue,
                       ),
@@ -314,7 +314,7 @@ class ProductDetailPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Abdul Aziz Ahwan',
+                            'Garry Alen',
                             style: kRalewayMedium.copyWith(
                               color: kBlack,
                               fontSize: SizeConfig.blockSizeHorizontal! * 4,

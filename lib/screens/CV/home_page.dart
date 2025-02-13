@@ -20,6 +20,21 @@ class _HomePageState extends State<HomePage> {
     "Cottage",
   ];
 
+  List<String> imageLinks = [
+  'https://mod-movers.com/wp-content/uploads/2020/06/webaliser-_TPTXZd9mOo-unsplash-scaled-e1591134904605.jpg',
+  'https://s3-alpha-sig.figma.com/img/fc2a/22eb/77b12515a6310130b669ed3062ff9bd9?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=dweKyW31POoTZC3wsUgUOAcK3X1VmiR9HWzMR3OHtZ73eG8GhKxbqiSkeWTu10IItklgoO3G8itfsCZjtoRQfrfMvLTzl3urY-QUmkCEWYMPWvE1gKTfp4T-Z3qCuK8n~YBboHHF2tdH-TAAug6sg5vCdDWL9A~5HWTwnJ3CkIG-1QMcFBx3-jDhANBXBU89cZtQ1VTNSzKDXEzPr8WSHtd9Iqqvt4lEG8c2IhTitQn1Iqrnl0u-gcUXRqi4a1vtEZkgdKUhVlLPvN1ccsKigRq7Ez68GIRK-o6tdX4yw7Ac2G-GGSwOmbiAWVltWwU2xnp-BmKft6sIQZLbV2aA7g__',
+];
+
+List<String> names = [
+  'Dreamsville House',
+  'Ascot House'
+];
+
+List<String> addresses = [
+  'Jl. Sultan Iskandar Muda',
+  'Jl. Cilandak Tengah'
+];
+
 
   int current = 0;
   @override
@@ -226,131 +241,121 @@ class _HomePageState extends State<HomePage> {
                 height: kPadding24,
               ),
               SizedBox(
-                height: 272,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 5,
-                  itemBuilder: (context, index) {
-                    return GestureDetector(
-                      onTap: (() => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const ProductDetailPage(),
-                            ),
-                          )),
-                      child: Container(
-                        height: 272,
-                        width: 222,
-                        margin: EdgeInsets.only(
-                          left: kPadding20,
-                          right: index == 5 - 1 ? kPadding20 : 0,
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(
-                            kBorderRadius20,
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              spreadRadius: 0,
-                              offset: const Offset(0, 18),
-                              blurRadius: 18,
-                              color: kBlack.withOpacity(0.1),
-                            )
-                          ],
-                          image: const DecorationImage(
-                            fit: BoxFit.cover,
-                            image: NetworkImage(
-                              'https://mod-movers.com/wp-content/uploads/2020/06/webaliser-_TPTXZd9mOo-unsplash-scaled-e1591134904605.jpg',
-                            ),
-                          ),
-                        ),
-                        child: Stack(
-                          children: [
-                            Align(
-                              alignment: Alignment.bottomCenter,
-                              child: Container(
-                                height: 136,
-                                decoration: BoxDecoration(
-                                  borderRadius: const BorderRadius.only(
-                                    bottomLeft:
-                                        Radius.circular(kBorderRadius20),
-                                    bottomRight:
-                                        Radius.circular(kBorderRadius20),
-                                  ),
-                                  gradient: kLinearGradientBlack,
-                                ),
+  height: 272,
+  child: ListView.builder(
+    scrollDirection: Axis.horizontal,
+    itemCount: imageLinks.length, // Sử dụng độ dài của danh sách hình ảnh
+    itemBuilder: (context, index) {
+      return GestureDetector(
+        onTap: (() => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ProductDetailPage(),
+              ),
+            )),
+        child: Container(
+          height: 272,
+          width: 222,
+          margin: EdgeInsets.only(
+            left: kPadding20,
+            right: index == imageLinks.length - 1 ? kPadding20 : 0,
+          ),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(
+              kBorderRadius20,
+            ),
+            boxShadow: [
+              BoxShadow(
+                spreadRadius: 0,
+                offset: const Offset(0, 18),
+                blurRadius: 18,
+                color: kBlack.withOpacity(0.1),
+              )
+            ],
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: NetworkImage(imageLinks[index]), // Sử dụng danh sách hình ảnh
+            ),
+          ),
+          child: Stack(
+            children: [
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  height: 136,
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.only(
+                      bottomLeft: Radius.circular(kBorderRadius20),
+                      bottomRight: Radius.circular(kBorderRadius20),
+                    ),
+                    gradient: kLinearGradientBlack,
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: kPadding16,
+                    vertical: kPadding20,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(
+                                kBorderRadius20,
+                              ),
+                              color: kBlack.withOpacity(
+                                0.24,
                               ),
                             ),
-                            Align(
-                              alignment: Alignment.center,
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: kPadding16,
-                                  vertical: kPadding20,
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: kPadding8,
+                              vertical: kPadding4,
+                            ),
+                            child: Row(
+                              children: [
+                                SvgPicture.asset(
+                                  'assets/images/icon_pinpoint.svg',
                                 ),
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: [
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(
-                                              kBorderRadius20,
-                                            ),
-                                            color: kBlack.withOpacity(
-                                              0.24,
-                                            ),
-                                          ),
-                                          padding: const EdgeInsets.symmetric(
-                                            horizontal: kPadding8,
-                                            vertical: kPadding4,
-                                          ),
-                                          child: Row(
-                                            children: [
-                                              SvgPicture.asset(
-                                                'assets/images/icon_pinpoint.svg',
-                                              ),
-                                              const SizedBox(
-                                                width: kPadding4,
-                                              ),
-                                              Text(
-                                                '1.8 km',
-                                                style: kRalewayRegular.copyWith(
-                                                  color: kWhite,
-                                                  fontSize: SizeConfig
-                                                          .blockSizeHorizontal! *
-                                                      2.5,
-                                                ),
-                                              )
-                                            ],
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Dreamsville House',
-                                          style: kRalewayMedium.copyWith(
-                                            color: kWhite,
-                                            fontSize: SizeConfig
-                                                    .blockSizeHorizontal! *
-                                                4,
-                                          ),
-                                        ),
+                                const SizedBox(
+                                  width: kPadding4,
+                                ),
+                                Text(
+                                  '1.8 km',
+                                  style: kRalewayRegular.copyWith(
+                                    color: kWhite,
+                                    fontSize: SizeConfig.blockSizeHorizontal! * 2.5,
+                                  ),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            names[index], // Sử dụng danh sách tên
+                            style: kRalewayMedium.copyWith(
+                              color: kWhite,
+                              fontSize: SizeConfig.blockSizeHorizontal! * 4,
+                            ),
+                          ),
                                         SizedBox(
                                           height:
                                               SizeConfig.blockSizeVertical! *
                                                   0.5,
                                         ),
                                         Text(
-                                          'Jl. Sultan Iskandar Muda',
+                                          addresses[index],
                                           style: kRalewayRegular.copyWith(
                                             color: kWhite,
                                             fontSize: SizeConfig
